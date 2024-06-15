@@ -1,0 +1,18 @@
+{% block title %}
+    Encyclopedia
+{% endblock %}
+{% block body %}
+    <h1>EDIT</h1>
+<form action="{% url 'save_edit' %}" method="POST">
+    {% csrf_token %}
+    <div><label for="title">Title</label></div>
+    <input type="text" name="title" value="{{title}}">
+    <div>
+        <label for="content">Markdown content</label></div>
+    <textarea name="content">{{content}}</textarea>
+    <br>
+    <input type="submit" value="edit" class="btn btn-danger">
+</form>
+
+
+{% endblock %}
